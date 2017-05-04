@@ -30,8 +30,8 @@
 	- [Naming Conventions](#naming-conventions)
 
 ---
-#Terminology
-###Rule declaration
+# Terminology
+### Rule declaration
 
 Name given to a selector with an accompanying group of properties.
 
