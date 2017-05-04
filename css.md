@@ -42,7 +42,7 @@ Name given to a selector with an accompanying group of properties.
 }
 ```
 
-###Selectors
+### Selectors
 
 In a rule declaration, “selectors” are the bits that determine which elements in the DOM tree will be styled by the defined properties. Selectors can match HTML elements, class, ID, or attributes.
 
@@ -61,7 +61,7 @@ Further Reading:
 - [CSS-Tricks: Attributes](https://css-tricks.com/almanac/selectors/a/attribute/)
 - [Jenkov: Attributes](http://tutorials.jenkov.com/css/selectors.html#attribute-selector)
 
-###Properties
+### Properties
 
 Properties give the selected elements of a rule declaration their styles.
 
@@ -72,7 +72,7 @@ Properties give the selected elements of a rule declaration their styles.
 }
 ```
 ----------
-#Syntax & Formatting
+# Syntax & Formatting
 
 Having a standard way of writing CSS means that code will always look and feel familiar to all members of the team. Code guidelines promote consistency, ensure a better environment to work in, and help with reading and updating of code.
 
@@ -108,11 +108,11 @@ Having a standard way of writing CSS means that code will always look and feel f
   color: #000 }
 ```
 
-###ID Selectors
+### ID Selectors
 
 While it is possible to select elements by ID in CSS, it should generally be considered an anti-pattern. ID selectors introduce an unnecessary high level of specificity to your rule declarations. Most importantly, they are not re-usable.
 
-###Quotes
+### Quotes
 
 Neither CSS nor Sass require strings to be quoted, but because the vast majority of other languages do require strings to be quoted, and for the sake of consistency, we believe strings should be quoted in all situations other than the few detailed below. Besides consistency, there are several other reasons for this choice:
 
@@ -144,7 +144,7 @@ $font-type: 'Helvetica', Arial, sans-serif;
 $font-type: 'sans-serif';
 ```
 
-###Numbers
+### Numbers
 - Never display trailing zeros.
 - A 0 value should never have a unit.
 - Always add a 0 before a decimal.
@@ -165,7 +165,7 @@ $font-type: 'sans-serif';
 }
 ```
 
-###Lists
+### Lists
 
 Lists are the Sass equivalent of arrays. A list is a flat data structure (not to be confused with maps) intended to store values or any type.
 
@@ -200,7 +200,7 @@ Further Reading:
 - [Sass maps vs nested lists](http://www.sitepoint.com/sass-maps-vs-nested-lists/)
 - [Working with lists & @each loops](https://benfrain.com/working-with-lists-and-each-loops-in-sass-with-the-index-and-nth-function/)
 
-###Maps
+### Maps
 
 The Sass term for associative arrays, hashes or even JavaScript objects. A map is a data structure mapping keys.
 
@@ -239,7 +239,7 @@ Further Reading:
 - [Sass Maps are Awesome](https://viget.com/extend/sass-maps-are-awesome)
 - [Introduction to Sass Maps & Example Usage](http://webdesign.tutsplus.com/tutorials/an-introduction-to-sass-maps-usage-and-examples--cms-22184)
 
-###Rule Ordering
+### Rule Ordering
 - @extend
 - @include
 - Regular style properties
@@ -267,7 +267,7 @@ Further Reading:
   }
 }
 ```
-###State Rules
+### State Rules
 
 A state is something that augments and overrides all other styles. For example, an accordion section may be in a collapsed or expanded state. To indicate the sate, we may add a class indicating the state.
 
@@ -292,7 +292,7 @@ Some possible states:
 - is-enabled
 - is-open
 
-###JavaScript Hooks
+### JavaScript Hooks
 
 Avoid binding to the same class in both your CSS and JavaScript. Conflating the two often leads to, at a minimum, time wasted during refactoring when a developer must cross-reference each class they are changing, and at its worst, developers being afraid to make changes for fear of breaking functionality.
 
@@ -302,7 +302,7 @@ We recommend creating JavaScript specific classes to bind to, prefixed with `js-
 <button type="button" class="button nav-trigger js-nav-trigger">Menu</button>
 ```
 
-#Nesting Selectors
+# Nesting Selectors
 
 We recommend nesting selectors no more than three levels deep. However, if naming conventions are followed, you shouldn’t need to be going more than 2 deep.
 
@@ -322,7 +322,7 @@ When selectors become this long, you’re likely writing CSS that is:
 - overly specific
 - not reusable
 
-#CSS Selectors
+# CSS Selectors
 - Avoid using ID’s for style.
 - Use meaningful names: `$visual-grid-color` not `$color` or `$vslgrd-clr`.
 - Avoid using the direct descendant selector `>`.
@@ -331,7 +331,7 @@ When selectors become this long, you’re likely writing CSS that is:
 - Avoid using HTML tags on classes for generic markup: `div.widgets`
 - Avoid nesting within a media query.
 
-###Reusability
+### Reusability
 
 With a move toward a more component-based approach to constructing UIs, the idea of reusability is paramount. We want the option to be able to move, recycle, duplicate, and syndicate components across our projects.
 
@@ -339,7 +339,7 @@ To this end, we make heavy use of classes. IDs, as well as being hugely over-spe
 
 [(source)](http://cssguidelin.es/#reusability)
 
-###Location Independence
+### Location Independence
 
 Given the ever-changing nature of most UI projects, and the move to more component-based architectures, it is in our interests not to style things based on where they are, but on what they are. That is to say, our components’ styling should not be reliant upon where we place them—they should remain entirely location independent.
 
@@ -347,7 +347,7 @@ A component shouldn’t have to live in a certain place to look a certain way.
 
 [(source)](http://cssguidelin.es/#location-independence)
 
-###Portability
+### Portability
 
 Reducing, or, ideally, removing, location dependence means that we can move components around our markup more freely, but how about improving our ability to move classes around components? On a much lower level, there are changes we can make to our selectors that make the selectors themselves—as opposed to the components they create—more portable. Take the following example:
 
@@ -363,7 +363,7 @@ Of course, there are times when you may want to legitimately qualify a selector�
 
 [(source)](http://cssguidelin.es/#portability)
 
-###Performance
+### Performance
 
 Generally speaking, the longer a selector is, the slower it is, for example:
 
@@ -391,7 +391,7 @@ To further compound the problem, we are using descendant selectors (e.g. `.foo .
 This is just one reason why nesting with preprocessors is often a false economy; as well as making selectors unnecessarily more specific, and creating location dependency, it also creates more work for the browser.
 
 
-#Comments
+# Comments
 
 Use comments to separate logical groups of styles within a document.
 
@@ -418,8 +418,8 @@ Use comments to separate logical groups of styles within a document.
 
 
 ----------
-#Advanced Sass
-###Mixins
+# Advanced Sass
+### Mixins
 
 Mixins allow us to create re-usable parts of CSS without having to write repetitive code. However, far too often, mixins are written in a way that bloat the size of our file through duplication. A mixin therefore should only be used if an argument is present to modify the style.
 
@@ -448,7 +448,7 @@ Further reading:
 - [DRY-ing Out Your Sass Mixins](http://alistapart.com/article/dry-ing-out-your-sass-mixins)
 - [The Mixin Directive](http://www.sitepoint.com/sass-basics-the-mixin-directive/)
 
-###Placeholders
+### Placeholders
 
 Unlike mixins, placeholders can be used multiple times without being printed out in the stylesheet. Just like `extends()`, placeholders group selectors.
 
@@ -462,10 +462,10 @@ Further reading:
 - [Dynamic Placeholders](http://advancedsass.com/articles/dynamic-placeholders-in-sass.html)
 
 ---
-#Suggested
+# Suggested
 The following section contains suggested ideas, it's up to you whether you want to apply it to your project.
 
-###Property Ordering
+### Property Ordering
 
 Currently there are three display styles:
 
@@ -490,7 +490,7 @@ Here is a suggested declaration order:
 - Miscellaneous: Pointers, Overflows, Scrolling …
 - Z-index
 
-###Naming Conventions
+### Naming Conventions
 
 Naming conventions in CSS are hugely useful in making your code strict, transparent, & more informative. A good naming convention will be able to tell you:
 
